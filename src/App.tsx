@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
+import { useAuth } from './contexts/AuthContext';
+import { setApiTokenGetter } from './services/api';
 import Hero from './components/Hero';
 import CarList from './components/CarList';
 import Footer from './components/Footer';
@@ -12,6 +14,12 @@ import { useCars } from './hooks/useCars';
 import type { Car } from './services/api';
 
 function App() {
+  const { getIdToken } = useAuth();
+
+  useEffect(() => {
+    setApiTokenGetter(getIdToken);
+  }, [getIdToken]);
+
   const {
     cars,
     loading,

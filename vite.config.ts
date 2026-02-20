@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
-const API_URL = 'https://bmeh8w4log.execute-api.us-east-1.amazonaws.com';
+const API_URL = 'https://2gfztglkwi.execute-api.us-east-1.amazonaws.com';
 
 export default defineConfig({
   base: '/jujo-cars-fe/',
